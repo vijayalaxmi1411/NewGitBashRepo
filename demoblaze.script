@@ -1,0 +1,36 @@
+﻿
+put file ResourcePath("DemoblazeData.txt") into testData
+log item 5 of testData
+Typetext windowsKey,"r"
+TypeText item 1 of testData,return
+Typetext windowsKey,upArrow
+Typetext item 2 of testData,return,WaitFor:15
+WaitFor 30, text:"PRODUCT STORE"
+set the SearchRectangle to screen_part_handler.ScreenPart("TopHalf")
+Click (Text:"Log in", dpi:"144", IgnoreSpaces:"Yes", WaitFor:8)
+WaitFor 15, text:"Username"
+moveto text:"Username"
+click text:"Username",hotspot:[0,59]
+TypeText item 3 of testData
+click text:"Password",hotspot:[0,59]
+TypeText item 4 of testData
+set the SearchRectangle to screen_part_handler.ScreenPart("HorizontalMiddle")
+click text:"Log in",waitFor:15
+//click text:item 5 of testData
+//put item 5 of testData into cate1
+log item 5 of testData
+log item 6 of testData
+//click text:cate1,waitFor:15
+click text:item 5 of testData
+click text:item 6 of testData
+repeat until ImageFound(text:"Dell i7 8gb", waitFor:15)
+	ScrollWheelDown 5
+end repeat
+put ImageRectangle(text:"Dell i7 8gb", waitFor:10) into var
+log var
+moveto text:"Dell i7 8gb",hotspot:[0,40]
+put ReadText(text:"Dell i7 8gb",hotspot:[0,40]) into price
+log price
+put price into itemPrice
+log itemPrice
+
