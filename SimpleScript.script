@@ -1,0 +1,45 @@
+﻿OpenBrowser "chrome"
+
+
+set the mouseDragSpeed to 5
+Drag "FirefoxIcon"
+Drop the RemoteScreenSize*[3/4]
+set the mouseDragSpeed to 10
+
+
+repeat with each color in ["red", "orange", "yellow", "green"]
+	
+	put "I think " & color & " is a very pretty color."
+	
+end repeat
+
+repeat with each letter in "A" to "G"
+	
+	repeat with each digit in 1 to 3
+		
+		put letter & digit-- Puts A1, A2, A3, B1, B2, ...
+		
+	end repeat
+	
+end repeat
+
+put "200" to "400" by "70" into range
+put range's nextValue 
+put range's nextValue
+put range's nextValue
+put range's nextKey
+
+set people to {mary:16,joyees:10,Aaron:20,Grace:11}
+put people's nextKey
+put people's nextKey
+put people's currentKey
+put people's currentValue
+put people's nextKeyValue
+
+
+
+
+
+
+
+
